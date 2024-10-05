@@ -18,16 +18,16 @@ class _HomePageState extends State<HomePage> {
 
   // Mock data for users
   final List<Map<String, String>> users = [
-    {'id': '1', 'title': 'Mr', 'firstName': 'John', 'lastName': 'Doe', 'picture': 'https://image.cnbcfm.com/api/v1/image/107168566-1671481983597-gettyimages-1450398458-mj1_4451_ce4b38b2-9f26-404e-b214-cf8454d82d0f.jpeg?v=1671482283&w=1858&h=1045&vtcrop=y'},
-    {'id': '2', 'title': 'Ms', 'firstName': 'Jane', 'lastName': 'Doe', 'picture': 'https://image.cnbcfm.com/api/v1/image/107168566-1671481983597-gettyimages-1450398458-mj1_4451_ce4b38b2-9f26-404e-b214-cf8454d82d0f.jpeg?v=1671482283&w=1858&h=1045&vtcrop=y'},
-    {'id': '3', 'title': 'Mr', 'firstName': 'Steve', 'lastName': 'Smith', 'picture': 'https://image.cnbcfm.com/api/v1/image/107168566-1671481983597-gettyimages-1450398458-mj1_4451_ce4b38b2-9f26-404e-b214-cf8454d82d0f.jpeg?v=1671482283&w=1858&h=1045&vtcrop=y'},
-    {'id': '4', 'title': 'Mrs', 'firstName': 'Anna', 'lastName': 'Johnson', 'picture': 'https://image.cnbcfm.com/api/v1/image/107168566-1671481983597-gettyimages-1450398458-mj1_4451_ce4b38b2-9f26-404e-b214-cf8454d82d0f.jpeg?v=1671482283&w=1858&h=1045&vtcrop=y'},
-    {'id': '5', 'title': 'Mr', 'firstName': 'Robert', 'lastName': 'Brown', 'picture': 'https://image.cnbcfm.com/api/v1/image/107168566-1671481983597-gettyimages-1450398458-mj1_4451_ce4b38b2-9f26-404e-b214-cf8454d82d0f.jpeg?v=1671482283&w=1858&h=1045&vtcrop=y'},
-    {'id': '6', 'title': 'Ms', 'firstName': 'Emily', 'lastName': 'Davis', 'picture': 'https://image.cnbcfm.com/api/v1/image/107168566-1671481983597-gettyimages-1450398458-mj1_4451_ce4b38b2-9f26-404e-b214-cf8454d82d0f.jpeg?v=1671482283&w=1858&h=1045&vtcrop=y'},
-    {'id': '7', 'title': 'Mr', 'firstName': 'Michael', 'lastName': 'Wilson', 'picture': 'https://image.cnbcfm.com/api/v1/image/107168566-1671481983597-gettyimages-1450398458-mj1_4451_ce4b38b2-9f26-404e-b214-cf8454d82d0f.jpeg?v=1671482283&w=1858&h=1045&vtcrop=y'},
-    {'id': '8', 'title': 'Ms', 'firstName': 'Sarah', 'lastName': 'Taylor', 'picture': 'https://image.cnbcfm.com/api/v1/image/107168566-1671481983597-gettyimages-1450398458-mj1_4451_ce4b38b2-9f26-404e-b214-cf8454d82d0f.jpeg?v=1671482283&w=1858&h=1045&vtcrop=y'},
-    {'id': '9', 'title': 'Mr', 'firstName': 'David', 'lastName': 'Anderson', 'picture': 'https://image.cnbcfm.com/api/v1/image/107168566-1671481983597-gettyimages-1450398458-mj1_4451_ce4b38b2-9f26-404e-b214-cf8454d82d0f.jpeg?v=1671482283&w=1858&h=1045&vtcrop=y'},
-    {'id': '10', 'title': 'Ms', 'firstName': 'Sophia', 'lastName': 'Thomas', 'picture': 'https://image.cnbcfm.com/api/v1/image/107168566-1671481983597-gettyimages-1450398458-mj1_4451_ce4b38b2-9f26-404e-b214-cf8454d82d0f.jpeg?v=1671482283&w=1858&h=1045&vtcrop=y'},
+    {'id': '1', 'title': 'Mr', 'firstName': 'John', 'lastName': 'Doe', 'picture': 'assets/img/m1.jpg'},
+    {'id': '2', 'title': 'Ms', 'firstName': 'Jane', 'lastName': 'Doe', 'picture': 'assets/img/g1.jpg'},
+    {'id': '3', 'title': 'Mr', 'firstName': 'Steve', 'lastName': 'Smith', 'picture': 'assets/img/m2.jpg'},
+    {'id': '4', 'title': 'Mrs', 'firstName': 'Anna', 'lastName': 'Johnson', 'picture': 'assets/img/g2.jpg'},
+    {'id': '5', 'title': 'Mr', 'firstName': 'Robert', 'lastName': 'Brown', 'picture': 'assets/img/m3.jpg'},
+    {'id': '6', 'title': 'Ms', 'firstName': 'Emily', 'lastName': 'Davis', 'picture': 'assets/img/g3.jpg'},
+    {'id': '7', 'title': 'Mr', 'firstName': 'Michael', 'lastName': 'Wilson', 'picture': 'assets/img/m4.jpg'},
+    {'id': '8', 'title': 'Ms', 'firstName': 'Sarah', 'lastName': 'Taylor', 'picture': 'assets/img/g4.jpg'},
+    {'id': '9', 'title': 'Mr', 'firstName': 'David', 'lastName': 'Anderson', 'picture': 'assets/img/m5.jpg'},
+    {'id': '10', 'title': 'Ms', 'firstName': 'Sophia', 'lastName': 'Thomas', 'picture': 'assets/img/g5.jpg'},
   ];
 
 
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
         final user = filteredUsers[index];
         return ListTile(
           leading: CircleAvatar(
-            backgroundImage: NetworkImage(user['picture']!),
+            backgroundImage: AssetImage(user['picture']!),
           ),
           title: Text('${user['firstName']} ${user['lastName']}'),
           subtitle: Text('ID: ${user['id']} - Title: ${user['title']}'),
@@ -116,9 +116,9 @@ class _HomePageState extends State<HomePage> {
   Widget buildGridView() {
     return GridView.builder(
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 4,
-        childAspectRatio: 0.8,
-        crossAxisSpacing: 10,
+        crossAxisCount: 3,
+        childAspectRatio: 0.9,
+        crossAxisSpacing: 15,
         mainAxisSpacing: 10,
       ),
       padding: EdgeInsets.all(10),
@@ -143,7 +143,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 CircleAvatar(
                   radius: 40,
-                  backgroundImage: NetworkImage(user['picture']!),
+                  backgroundImage: AssetImage(user['picture']!),
                 ),
                 Text('ID: ${user['id']}'),
                 Text('Title: ${user['title']}'),

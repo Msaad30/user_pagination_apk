@@ -19,7 +19,7 @@ class UserDetailPage extends StatelessWidget {
             Center(
               child: CircleAvatar(
                 radius: 50,
-                backgroundImage: NetworkImage(user['picture']!),
+                backgroundImage: AssetImage(user['picture']!),
               ),
             ),
             SizedBox(height: 16),
